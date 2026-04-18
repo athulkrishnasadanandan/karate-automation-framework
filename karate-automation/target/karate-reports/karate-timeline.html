@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"api\/posts[1:6]","start":1776488721434,"end":1776488722365,"title":"api\/posts[1:6] 10:35:21.434-10:35:22.365 Get all posts"},{"id":2,"group":1,"content":"api\/posts[2:12]","start":1776488722398,"end":1776488722652,"title":"api\/posts[2:12] 10:35:22.398-10:35:22.652 Get post by ID"},{"id":3,"group":1,"content":"api\/posts[3:18]","start":1776488722671,"end":1776488722864,"title":"api\/posts[3:18] 10:35:22.671-10:35:22.864 Verify post fields"},{"id":4,"group":1,"content":"api\/posts[4.1:32]","start":1776488722882,"end":1776488723083,"title":"api\/posts[4.1:32] 10:35:22.882-10:35:23.083 Get multiple posts"},{"id":5,"group":1,"content":"api\/posts[4.2:33]","start":1776488723096,"end":1776488723282,"title":"api\/posts[4.2:33] 10:35:23.096-10:35:23.282 Get multiple posts"},{"id":6,"group":1,"content":"api\/posts[4.3:34]","start":1776488723292,"end":1776488723503,"title":"api\/posts[4.3:34] 10:35:23.292-10:35:23.503 Get multiple posts"},{"id":7,"group":1,"content":"api\/users[1:6]","start":1776488724810,"end":1776488725056,"title":"api\/users[1:6] 10:35:24.810-10:35:25.056 Get all users"},{"id":8,"group":1,"content":"api\/users[2:12]","start":1776488725072,"end":1776488725296,"title":"api\/users[2:12] 10:35:25.072-10:35:25.296 Get specific user by ID"},{"id":9,"group":1,"content":"api\/users[3:19]","start":1776488725303,"end":1776488725488,"title":"api\/users[3:19] 10:35:25.303-10:35:25.488 Verify user email format"},{"id":10,"group":1,"content":"api\/users[4.1:32]","start":1776488725496,"end":1776488725698,"title":"api\/users[4.1:32] 10:35:25.496-10:35:25.698 Get multiple users"},{"id":11,"group":1,"content":"api\/users[4.2:32]","start":1776488725708,"end":1776488725916,"title":"api\/users[4.2:32] 10:35:25.708-10:35:25.916 Get multiple users"},{"id":12,"group":1,"content":"api\/users[4.3:32]","start":1776488725922,"end":1776488726226,"title":"api\/users[4.3:32] 10:35:25.922-10:35:26.226 Get multiple users"},{"id":13,"group":1,"content":"api\/users[4.4:32]","start":1776488726234,"end":1776488726424,"title":"api\/users[4.4:32] 10:35:26.234-10:35:26.424 Get multiple users"},{"id":14,"group":1,"content":"api\/users[4.5:32]","start":1776488726433,"end":1776488726681,"title":"api\/users[4.5:32] 10:35:26.433-10:35:26.681 Get multiple users"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
